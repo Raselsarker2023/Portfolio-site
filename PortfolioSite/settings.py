@@ -27,7 +27,7 @@ DEBUG = True
 
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['https://portfoliosites.onrender.com','https://*.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://portfoliosite-b78f.onrender.com','https://*.127.0.0.1']
 
 # Application definition
 
