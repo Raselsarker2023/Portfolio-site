@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Your Resume/CV</h1>
+  {% if resume.file %}
+    <p><a href="{{ resume.file.url }}" target="_blank">Download Resume</a></p>
+  {% else %}
+    <p>No resume uploaded yet.</p>
+  {% endif %}
+{% endblock %}
+
+
+
