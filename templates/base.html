@@ -71,63 +71,50 @@
               {% if user.is_authenticated %}
               <li class="nav-item mx-3">
                 <a class="nav-link text-white" href="{% url 'homepage' %}"
-                  >Home</a
-                >
+                  ><i class="fa-solid fa-house-user mr-2"></i>Home</a>
               </li>
               <li class="nav-item mx-3">
                 <a class="nav-link text-white" href="{% url 'add_project' %}"
-                  >Add project</a
-                >
+                  >Add project</a>
               </li>
 
               <li class="nav-item mx-3">
                 <a class="nav-link text-white" href="{% url 'upload_resume' %}"
-                  >Resume/CV</a
-                >
+                  >Resume/CV</a>
               </li>
               <li class="nav-item mx-3">
                 <a class="nav-link text-white" href="{% url 'contact_form' %}"
-                  >Contacts me</a
-                >
+                  >Contacts me</a>
               </li>
 
               <li class="nav-item mx-3">
                 <a class="nav-link text-white" href="{% url 'add_skill' %}"
-                  >Skills</a
-                >
+                  >Skills</a>
               </li>
               <li class="nav-item mx-3">
                 <a class="nav-link text-white" href="{% url 'add_blog' %}"
-                  >Blogs</a
-                >
+                  >Blogs</a>
               </li>
 
               <li class="nav-item mx-3">
-                <a class="nav-link text-white" href="{% url 'profile' %}"
-                  >Profile</a
-                >
+                <a class="nav-link text-white" href="{% url 'profile' %}"><i class="fa-regular fa-user mr-2"></i>Profile</a> 
               </li>
               <li class="nav-item mx-3">
                 <form method="post" action="{% url 'logout' %}">
                   {% csrf_token %}
                   <button
                     class="nav-link btn btn-primary rounded-3xl text-white"
-                    type="submit"
-                  >
-                    Logout
+                    type="submit"><i class="fa-solid fa-right-from-bracket mr-2"></i>Logout
                   </button>
                 </form>
               </li>
               {% else %}
               <li class="nav-item mx-3">
                 <a class="nav-link text-white" href="{% url 'register' %}"
-                  >Register</a
-                >
+                  ><i class="fa-solid fa-registered mr-2"></i>Register</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="{% url 'login' %}"
-                  >Login</a
-                >
+                <a class="nav-link btn btn-primary rounded-3xl text-white " href="{% url 'login' %}"><i class="fa-solid fa-arrow-right-to-bracket mr-2"></i>Login</a>
               </li>
               {% endif %}
             </ul>

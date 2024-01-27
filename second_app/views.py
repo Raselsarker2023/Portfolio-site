@@ -14,20 +14,34 @@ from django.views.generic import CreateView,UpdateView,DeleteView,DetailView
 
 
 # Create your views here.
-
-
 @login_required
 def addProject(request):
     if request.method == 'POST':
-        project_form = forms.ProjectForm(request.POST)
-        if project_form.is_valid():
-            project_form.instance.author = request.user
-            project_form.save()
-            return redirect('add_project')  
-
+        form = forms.ProjectForm(request.POST, request.FILES)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            
+            instance.image = request.FILES['image']
+            instance.save()
+            return redirect('add_project')
     else:
-        project_form = forms.ProjectForm()
-    return render(request, 'add_projects.html', {'form': project_form})
+        form = forms.ProjectForm()
+
+    return render(request, 'add_projects.html', {'form': form})
+
+
+# @login_required
+# def addProject(request):
+#     if request.method == 'POST':
+#         project_form = forms.ProjectForm(request.POST)
+#         if project_form.is_valid():
+#             project_form.instance.author = request.user
+#             project_form.save()
+#             return redirect('add_project')  
+
+#     else:
+#         project_form = forms.ProjectForm()
+#     return render(request, 'add_projects.html', {'form': project_form})
 
 
 
