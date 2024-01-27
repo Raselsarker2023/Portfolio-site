@@ -100,39 +100,40 @@
       </div>
     </div>
   </div>
-  
 </div>
 
 
-<div class="d-flex flex-wrap p-3">
+<div class="d-flex flex-wrap p-3 pt-4">
   <div class="col-2 bg-white p-3">
-    <h5 class="text-2xl">All Categories Projects</h5>
+    <h5 class="text-2xl" style="font-weight: bold;">All Categories Projects</h5>
     {% for cat in category %}
-    <div class="mb-2">
+    <div class="mb-2 pt-2">
       <a
         href="{% url 'category_wise_project' cat.slug %}"
-        class="btn btn-info btn-sm text-dark"
-      >
+        class="btn btn-info btn-sm text-dark">
         {{ cat.name }}
       </a>
     </div>
     {% endfor %}
   </div>
   
-  <div class="col-10 p-3">
-    <h1 class="text-2xl">Total projects : {{ data | length }}</h1>
-    <div class="d-flex flex-wrap pt-5">
+  <div class="col-10 p-3" style="background-color: #E4E6F1;">
+    <div class="d-flex mx-auto">
+      <h1 class="text-2xl mb-4" style="font-weight: bold;">Total projects: {{ data | length }}</h1>
+      <div class="mx-48"></div> 
+      <h1 class="text-4xl" style="font-weight: bold;">My all Projects</h1>
+    </div>
+  
+    <div class="d-flex flex-wrap pt-4" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
       {% for d in data %}
-      <div class="col-sm-3">
-        <div class="card m-2">
+      <div class="col-lg-3 mb-3 p-2">
+        <div class="card" style="width: 300px; height: 350px; border: 1px solid gray;">
+          <img src="{{ d.image.url }}" class="card-img-top" style="height: 150px; object-fit: cover;" alt="Project Image" />
           <div class="card-body">
-            <img src="{{ d.image.url }}" class="card-img-top p-1" alt="..." />
-            <h1 class="card-title btn btn-warning">
-              Project Name: {{ d.title }}
-            </h1>
-            <p class="card-text">Description: {{ d.description }}</p>
+            <h1 class="card-title btn btn-warning mb-3">{{ d.title }}</h1>
+            <p class="card-text">{{ d.description|truncatewords:15 }}</p>
             <p class="card-text btn btn-danger btn-sm text-white">
-              <a href="{% url 'detail_project' d.id %}">Details</a>
+              <a href="{% url 'detail_project' d.id %}" class="text-white">Details</a>
             </p>
           </div>
         </div>

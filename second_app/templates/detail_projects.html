@@ -6,10 +6,10 @@
     <div class="col-lg-5">
       <img src="{{ post.image.url }}" class="card-img-top" alt="..."/>      
     </div>
-    <div class="col-lg-5">
+    <div class="col-lg-5 mt-2 g-3">
+      <img src="{{ post.image.url }}" alt="image" style="width: 200px; height: 100px;">
       <h1 class="card-title btn btn-info">Project name : {{ post.title }}</h1>
-      <p class="card-text">Description : {{ post.description }}</p>
-      <img src="{{ post.image.url }}" alt="image">
+      <p class="card-text">Description : {{ post.description|truncatewords:15 }}</p>
       <p class="card-text">Technology Used : {{ post.technologies_used }}</p>
       <p class="card-text">Project URL : <a href="{{ post.project_url }}" target="_blank">{{ post.project_url }}</a></p>
       <p> Category : {% for cat in post.category.all %}
