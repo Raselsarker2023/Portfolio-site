@@ -1,41 +1,57 @@
 {% extends 'base.html' %} {% block content %}
 
-  <div class="container mx-auto mt-8">
-    <h1 class="text-2xl font-bold mb-2">Get In Touch</h1>
-    <p class="pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-    <p class="">et dolore magna aliqua..</p>
-    {% if contact_info %}
-      <p>Email: {{ contact_info.email }}</p>
-      <p>Phone: {{ contact_info.phone }}</p>
-    {% endif %}
+<div class="container mx-auto mt-8 justify-content-center align-content-center">
+    <div class="first flex flex-col items-center justify-center">
+      <h1 class="text-4xl font-bold mb-2">Contact us</h1>
+      <p class="pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+      <p class="">et dolore magna aliqua..</p>
+      {% if contact_info %}
+        <p>Email: {{ contact_info.email }}</p>
+        <p>Phone: {{ contact_info.phone }}</p>
+      {% endif %}
+    </div>
+  
 
-    <form method="post" class=" mx-auto my-4 p-8 border border-gray-300 rounded-lg">
+    <form method="post" class="mx-auto my-4 p-8 border-1 border-black rounded-lg">
       {% csrf_token %}
       
-      <!-- Name & mail-->
-      <div class="mb-4 d-flex w-full">
-        <label for="id_name" class="block text-gray-600 text-sm font-semibold mb-2">Name</label>
-        <input type="text" name="name" id="id_name" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500">
-        <label for="id_email" class="block text-gray-600 text-sm font-semibold mb-2">Email</label>
-        <input type="email" name="email" id="id_email" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500">
+      <!-- Name & mail -->
+      <div class="parent flex gap-4">
+        <div class="mb-4 w-full">
+          <label for="id_name" class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Name</label>
+          <input type="text" name="name" id="id_name" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500">
+        </div>
+        <div class="mb-4  w-full">
+            <label for="id_email" class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Email</label>
+            <input type="email" name="email" id="id_email" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500">
+        </div>
       </div>
-
+     
+  
       <!-- Phone_no & Subject -->
-      <div class="mb-4 d-flex max-w-full">
-        <label for="id_phone_no" class="block text-gray-600 text-sm font-semibold mb-2">Phone no</label>
-        <input type="phone_no" name="phone_no" id="id_phone_no" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500">
-        <label for="id_subject" class="block text-gray-600 text-sm font-semibold mb-2">Subject</label>
-        <input type="text" name="subject" id="id_subject" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500">
+      <div class="parent flex gap-4">
+        <div class="mb-4 w-full">
+          <label for="id_phone_no" class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Phone no</label>
+          <input type="tel" name="phone_no" id="id_phone_no" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500">
+        </div>
+        <div class="mb-4 w-full">
+            <label for="id_subject" class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Social media</label>
+            <input type="text" name="subject" id="id_subject" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500">
+        </div>
       </div>
-
+      
+  
       <!-- Message -->
       <div class="mb-4">
-        <label for="id_message" class="block text-gray-600 text-sm font-semibold mb-2">Your Message</label>
-        <textarea name="message" id="id_message" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"></textarea>
+          <label for="id_message" class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Your Message</label>
+          <textarea name="message" id="id_message" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"></textarea>
       </div>
-
+  
       <!-- Submit Button -->
-      <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">Send Message</button>
-    </form>
+      <div class="flex items-center justify-center">
+        <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">Send Message</button>
+      </div>
+    
+  </form>  
   </div>
 {% endblock %}

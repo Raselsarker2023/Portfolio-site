@@ -1,16 +1,23 @@
+
 {% extends 'base.html' %}
 
 {% block content %}
-  <div class="container mx-auto mt-8">
-    <h1 class="text-2xl font-bold mb-4">Contact Information</h1>
+
+<div class="contact-form flex flex-col items-center justify-center" style="height: 500px;">
+    <h1 class="text-4xl font-bold mb-4">Your Contact Information</h1>
     {% if contact_info %}
-      <div class="bg-white p-6 rounded-lg shadow-md">
-        <p class="text-lg font-semibold mb-2">Email: {{ contact_info.email }}</p>
-        <p class="text-lg font-semibold mb-2">Phone: {{ contact_info.phone }}</p>
-        <p class="text-lg font-semibold mb-2">Social Media: {{ contact_info.social_media }}</p>
-      </div>
+    <p>Name: {{ contact_info.name }}</p>
+    <p>Email: {{ contact_info.email }}</p>
+    <p>Phone: {{ contact_info.phone_no }}</p>
+    <p>Message: {{ contact_info.message }}</p>
+      
     {% else %}
-      <p>Contact information not available.</p>
+      <p class="mt-4">No contact information added yet.</p>
     {% endif %}
-  </div>
+
+    <div class="button pt-5">
+      <a href="{% url 'contact_form' %}" class="inline-block mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add Contact</a>
+    </div>
+</div>
+ 
 {% endblock %}

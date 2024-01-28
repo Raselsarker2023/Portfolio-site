@@ -1,12 +1,18 @@
+
 {% extends 'base.html' %}
+
 {% block content %}
-  <h1>Your Resume/CV</h1>
-  {% if resume.file %}
-    <p><a href="{{ resume.file.url }}" target="_blank">Download Resume</a></p>
+  <h1 class="text-3xl font-bold mb-4">Your Resume</h1>
+  {% if r in resume %}
+    <p>{{ resume.file.name }}</p>
+    <p><a href="{{ r.file.url }}" target="_blank">Download Resume</a></p>
   {% else %}
-    <p>No resume uploaded yet.</p>
+    <p class="mt-4">No resume uploaded yet.</p>
   {% endif %}
+  <a href="{% url 'upload_resume' %}" class="inline-block mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Upload Resume</a>
 {% endblock %}
+
+
 
 
 

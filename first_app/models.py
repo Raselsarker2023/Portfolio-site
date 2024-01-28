@@ -27,15 +27,15 @@ class SkillModel(models.Model):
 
 class ContactModel(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
     email = models.EmailField()
-    phone = models.CharField(max_length=15, blank=True, null=True)
+    phone_no = models.CharField(max_length=15, blank=True, null=True)
     social_media = models.URLField(blank=True, null=True)
+    message = models.TextField()
 
     def __str__(self):
         return self.user.username
     
-    
-
 
 
 
