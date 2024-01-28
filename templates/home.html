@@ -1,106 +1,37 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
-<div class="w-screen bg-gray-500 h-screen px-10">
 
-  
-  <div class="rounded-3xl flex w-full mt-3 h-screen" style="background-color: #22063d">
-    <div class="w-full text-center h-screen flex items-center justify-center">
-      <img class="" src="{% static 'logo.png' %}" />
+<div class="w-screen h-screen px-10" style="background-color: #FBF8F8;">
+  <div class="rounded-3xl flex flex-col items-center pt-24">
+    <img class="" src="{% static 'Rasel.png' %}" style="height: 100px; border-radius: 100%;" />
+    <h1 class="pt-4">Welcome to My Portfolio</h1>
+    <h1 class="font-bold text-6xl my-3">Hi, I'm Rasel Sarker</h1>
+    <h1 class="font-bold text-4xl text-danger">Web Developer.</h1>
+    <p class="pt-3">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+      <br class="justify-content-center"> 
+      <span class="text-center">et dolore magna aliqua..</span>
+    </p>
+    
+    <div class="icon pt-3">
+      <ul class="flex flex-col items-center">
+        <li class="mx-3">
+          <a href="https://www.linkedin.com/in/rasel-sarker-405160227/"><i class="fab fa-linkedin mr-2"></i></a>
+          <a href="https://github.com/Raselsarker2023"><i class="fab fa-whatsapp-square mr-2"></i></a>
+          <a href="https://www.facebook.com/mdrasel.sarker.7773631/photos"><i class="fab fa-facebook mr-2"></i></a>
+          <a href="https://www.linkedin.com/in/rasel-sarker-405160227/"><i class="fab fa-twitter mr-2"></i></a>
+          <a href="https://www.linkedin.com/in/rasel-sarker-405160227/"><i class="fab fa-instagram mr-2"></i></a>
+        </li>
+      </ul>
     </div>
-    <div
-      class="flex rounded-3xl flex-col w-full h-full justify-center items-start pt-12 pb-24 px-6 bg-white bg-opacity-70"
-    >
-      <h1 class="font-bold text-4xl my-4">Welcome to My Portfolio</h1>
-      <p class="leading-normal mb-4">
-        This is My Portfolio where you can deposit money, borrow books, return
-        books. You can also create an account, log in, and log out. Lorem ipsum
-        dolor sit amet consectetur adipisicing elit. Sed nemo quaerat quo dicta,
-        adipisci eum fuga ratione id numquam eius veniam placeat voluptatum,
-        itaque tempora molestias vel, blanditiis fugiat ipsam!
-      </p>
-      <div class="pt-3 p-3">
-        <h1 class="w-full">Skills:</h1>
-        <div class="flex flex-wrap gap-2 mt-4">
-          <a
-            href="#"
-            class="bg-blue-900 text-white rounded hover:bg-dark hover:text-blue-900 hover:border-blue-900 shadow hover:shadow-lg py-2 px-4 border border-gray-900 hover:border-transparent"
-            >Python</a
-          >
-          <a
-            href="#"
-            class="bg-blue-900 text-white rounded hover:bg-dark hover:text-blue-900 hover:border-blue-900 shadow hover:shadow-lg py-2 px-4 border border-gray-900 hover:border-transparent"
-            >Django</a
-          >
-          <a
-            href="#"
-            class="bg-blue-900 text-white rounded hover:bg-dark hover:text-blue-900 hover:border-blue-900 shadow hover:shadow-lg py-2 px-4 border border-gray-900 hover:border-transparent"
-            >Bootstrap</a
-          >
-          <a
-            href="#"
-            class="bg-blue-900 text-white rounded hover:bg-dark hover:text-blue-900 hover:border-blue-900 shadow hover:shadow-lg py-2 px-4 border border-gray-900 hover:border-transparent"
-            >Tailwind</a
-          >
-          <a
-            href="#"
-            class="bg-blue-900 text-white rounded hover:bg-dark hover:text-blue-900 hover:border-blue-900 shadow hover:shadow-lg py-2 px-4 border border-gray-900 hover:border-transparent"
-            >C/C++</a
-          >
-          <a
-            href="#"
-            class="bg-blue-900 text-white rounded hover:bg-dark hover:text-blue-900 hover:border-blue-900 shadow hover:shadow-lg py-2 px-4 border border-gray-900 hover:border-transparent"
-            >Data-structure</a
-          >
-          <a
-            href="#"
-            class="bg-blue-900 text-white rounded hover:bg-dark hover:text-blue-900 hover:border-blue-900 shadow hover:shadow-lg py-2 px-4 border border-gray-900 hover:border-transparent"
-            >Python</a
-          >
-          <a
-            href="#"
-            class="bg-blue-900 text-white rounded hover:bg-dark hover:text-blue-900 hover:border-blue-900 shadow hover:shadow-lg py-2 px-4 border border-gray-900 hover:border-transparent"
-            >Algorithm</a
-          >
-          <a
-            href="#"
-            class="bg-blue-900 text-white rounded hover:bg-dark hover:text-blue-900 hover:border-blue-900 shadow hover:shadow-lg py-2 px-4 border border-gray-900 hover:border-transparent"
-            >JavaScript</a
-          >
-        </div>
-      </div>
-
-      <div class="container flex flex-wrap pt-3 p-3 items-center">
-        <ul class="container flex flex-wrap pt-3 p-3 items-center">
-          <li class="mx-3">
-            <a
-              class="btn btn-primary text-white"
-              href="https://portfoliosite-b78f.onrender.com"
-            >
-              <i class="fas fa-satellite-dish mr-2"></i>Live Site
-            </a>
-          </li>
-
-          <li class="mx-3">
-            <a
-              class="btn btn-dark text-white"
-              href="https://github.com/Raselsarker2023"
-            >
-              <i class="fab fa-github mr-2"></i>Github
-            </a>
-          </li>
-
-          <li class="mx-3">
-            <a
-              class="btn btn-dark text-white"
-              href="https://www.linkedin.com/in/rasel-sarker-405160227/"
-            >
-              <i class="fab fa-linkedin mr-2"></i>Linkedin
-            </a>
-          </li>
-        </ul>
-      </div>
+    <div class="pt-3">
+      <button class="btn btn-danger text-white hover-bg-black">Contact me ></button>
     </div>
   </div>
 </div>
+
+
+
+
 
 
 <div class="d-flex flex-wrap p-3 pt-4">
