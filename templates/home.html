@@ -2,16 +2,14 @@
 
 <div class="w-screen h-screen px-10" style="background-color: #FBF8F8;">
   <div class="rounded-3xl flex flex-col items-center pt-24">
-    <img class="" src="{% static 'Rasel.png' %}" style="height: 100px; border-radius: 100%;" />
+    <img class="" src="{% static 'Rasel.png' %}" style="height: 100px; border-radius: 100%; background-color: #FBF8F8;"/>
     <h1 class="pt-4">Welcome to My Portfolio</h1>
     <h1 class="font-bold text-6xl my-3">Hi, I'm Rasel Sarker</h1>
-    <h1 class="font-bold text-4xl text-danger">Web Developer.</h1>
-    <p class="pt-3">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-      <br class="justify-content-center"> 
-      <span class="text-center">et dolore magna aliqua..</span>
-    </p>
-    
+    <h1 class="font-bold text-5xl text-danger">Web Developer.</h1>
+
+    <p class="pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+    <p class="text-center">et dolore magna aliqua..</p>
+
     <div class="icon pt-3">
       <ul class="flex flex-col items-center">
         <li class="mx-3">
@@ -32,9 +30,7 @@
 
 
 
-
-
-<div class="d-flex flex-wrap p-3 pt-4">
+<div class="d-flex flex-wrap">
   <div class="col-2 bg-white p-3">
     <h5 class="text-2xl" style="font-weight: bold;">All Categories Projects</h5>
     {% for cat in category %}

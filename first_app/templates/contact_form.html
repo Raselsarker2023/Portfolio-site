@@ -1,34 +1,31 @@
 {% extends 'base.html' %} {% block content %}
 
   <div class="container mx-auto mt-8">
-    <h1 class="text-2xl font-bold mb-4">Contact Us</h1>
+    <h1 class="text-2xl font-bold mb-2">Get In Touch</h1>
+    <p class="pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+    <p class="">et dolore magna aliqua..</p>
     {% if contact_info %}
       <p>Email: {{ contact_info.email }}</p>
       <p>Phone: {{ contact_info.phone }}</p>
-      <!-- Add other contact details as needed -->
-    {% else %}
-      <p>Contact information not available.</p>
     {% endif %}
 
-    <form method="post" class="max-w-md">
+    <form method="post" class=" mx-auto my-4 p-8 border border-gray-300 rounded-lg">
       {% csrf_token %}
       
-      <!-- Name -->
-      <div class="mb-4">
-        <label for="id_name" class="block text-gray-600 text-sm font-semibold mb-2">Your Name</label>
+      <!-- Name & mail-->
+      <div class="mb-4 d-flex w-full">
+        <label for="id_name" class="block text-gray-600 text-sm font-semibold mb-2">Name</label>
         <input type="text" name="name" id="id_name" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500">
-      </div>
-
-      <!-- Email -->
-      <div class="mb-4">
-        <label for="id_email" class="block text-gray-600 text-sm font-semibold mb-2">Your Email</label>
+        <label for="id_email" class="block text-gray-600 text-sm font-semibold mb-2">Email</label>
         <input type="email" name="email" id="id_email" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500">
       </div>
 
-      <!-- phone_no -->
-      <div class="mb-4">
+      <!-- Phone_no & Subject -->
+      <div class="mb-4 d-flex max-w-full">
         <label for="id_phone_no" class="block text-gray-600 text-sm font-semibold mb-2">Phone no</label>
         <input type="phone_no" name="phone_no" id="id_phone_no" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500">
+        <label for="id_subject" class="block text-gray-600 text-sm font-semibold mb-2">Subject</label>
+        <input type="text" name="subject" id="id_subject" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500">
       </div>
 
       <!-- Message -->
@@ -38,9 +35,7 @@
       </div>
 
       <!-- Submit Button -->
-      <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">Submit</button>
+      <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">Send Message</button>
     </form>
   </div>
 {% endblock %}
-
-
