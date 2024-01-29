@@ -1,22 +1,26 @@
-
 {% extends 'base.html' %}
 
 {% block content %}
 
-<div class="contact-form flex flex-col items-center justify-center" style="height: 500px;">
+<div class="contact-form flex flex-col items-center justify-center" style="height: 500px; background-color: #E4E4E4;">
     <h1 class="text-4xl font-bold mb-4">Your Contact Information</h1>
     {% if contact_info %}
-    <p>Name: {{ contact_info.name }}</p>
-    <p>Email: {{ contact_info.email }}</p>
-    <p>Phone: {{ contact_info.phone_no }}</p>
-    <p>Message: {{ contact_info.message }}</p>
-      
+        <div class="col-lg-2 mb-2 p-2">
+            <div class="card" style="width: 250px; height: 300px; border: 1px solid gray;">
+                <div class="card-body">
+                    <h1 class="card-title btn btn-warning mb-3">Name: {{ contact_info.name }}</h1>
+                    <h1 class="card-title mb-3">Email: {{ contact_info.email }}</h1>
+                    <h1 class="card-title mb-3">Phone: {{ contact_info.phone_no }}</h1>
+                    <p class="card-text">Message: {{ contact_info.message|truncatewords:15 }}</p>
+                </div>
+            </div>
+        </div>
     {% else %}
-      <p class="mt-4">No contact information added yet.</p>
+        <p class="mt-4">No contact information added yet.</p>
     {% endif %}
 
-    <div class="button pt-5">
-      <a href="{% url 'contact_form' %}" class="inline-block mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add Contact</a>
+    <div class="button pt-3">
+        <a href="{% url 'contact_form' %}" class="inline-block mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add Contact</a>
     </div>
 </div>
  

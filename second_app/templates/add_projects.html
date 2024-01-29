@@ -5,10 +5,8 @@
 <div class="mx-auto mt-8">
     <form class="max-w-md mx-auto bg-white p-8 rounded shadow-md" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <h1 class="text-2xl font-semibold mb-6">Add Your Project</h1>
-        
+        <h1 class="text-2xl font-semibold mb-6">Add Your Project</h1>       
         {{ form | crispy }}
-
         <button type="submit" class="bg-yellow-500 text-white p-2 rounded mt-4 hover:bg-yellow-600 transition">Submit</button>
     </form>
 </div>

@@ -17,7 +17,6 @@ class ProfilePictureModel(models.Model):
 
     
     
-
 class SkillModel(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)

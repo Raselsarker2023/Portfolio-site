@@ -40,8 +40,9 @@ def upload_resume(request):
 
 @login_required
 def view_resume(request):
+    form = ResumeForm()
     resume = ResumeModel.objects.filter(user=request.user).first()
-    return render(request, 'view_resume.html', {'resume': resume})
+    return render(request, 'view_resume.html', {'resume': resume, 'form': form})
 
 
 

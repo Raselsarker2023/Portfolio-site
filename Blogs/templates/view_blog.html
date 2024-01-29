@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="flex flex-col items-center justify-center">
+    <h1 class="text-4xl font-bold mb-4">Blog Pages ({{ blogs.count }} Blogs)</h1>
+    {% if blogs %}
+      <div class="row w-full mx-auto ms-3">
+        {% for blog in blogs %}
+          <div class="col-lg-2 mb-2 p-2">
+            <div class="card" style="width: 250px; height: 300px; border: 1px solid gray;">
+              <div class="card-body">
+                <h1 class="card-title btn btn-warning mb-3">Name : {{ blog.title }}</h1>
+                <h1 class="card-title btn btn-warning mb-3">Author : {{ blog.author }}</h1>
+                <p class="card-text">{{ blog.content|truncatewords:15 }}</p>
+                <p class="card-text">Date : {{ blog.pub_date|date:"F d, Y H:i" }}</p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="mt-4">No Blogs added yet.</p>
+    {% endif %}
+
+    <div class="button pt-3">
+      <a href="{% url 'add_blog' %}" class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add more Blog</a>
+    </div>
+  </div>
+
+{% endblock %}
