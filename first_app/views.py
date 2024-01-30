@@ -24,6 +24,14 @@ def upload_profile_picture(request):
 
 
 @login_required
+def view_profile(request):
+    form = ProfilePictureForm()
+    profile_picture = ProfilePictureModel.objects.filter(user=request.user).first()
+    return render(request, 'view_profile.html', {'profile_picture': profile_picture, 'form': form})
+
+
+
+@login_required
 def upload_resume(request):
     if request.method == 'POST':
         form = ResumeForm(request.POST, request.FILES)

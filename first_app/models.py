@@ -1,17 +1,20 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+    
 
 class ResumeModel(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    file = models.FileField(upload_to='resumes/')
-    
-    
+    file = models.ImageField(upload_to='second_app/media/uploads/', blank=True, null=True, help_text="Upload a PNG file")
+    google_docs_link = models.URLField(null=True, blank=True, help_text="Provide a Google Docs link")
+
+    def __str__(self):
+        return f"Resume for {self.user.username}"
+
 
 class ProfilePictureModel(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    picture = models.ImageField(upload_to='profile_pictures/', null=True, blank=True)
-
+    picture = models.ImageField(upload_to='second_app/media/uploads/', blank=True, null=True, help_text="Upload a PNG file")
+    
     def __str__(self):
         return f"{self.user.username}'s Profile Picture"
 
@@ -22,6 +25,8 @@ class SkillModel(models.Model):
     name = models.CharField(max_length=255)
     proficiency_level = models.CharField(max_length=255)
     
+    def __str__(self):
+        return self.user.name
     
 
 class ContactModel(models.Model):

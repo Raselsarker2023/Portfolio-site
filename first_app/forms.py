@@ -2,10 +2,12 @@
 from django import forms
 from .models import ResumeModel, SkillModel, ContactModel, ProfilePictureModel
 
+
 class ResumeForm(forms.ModelForm):
     class Meta:
         model = ResumeModel
-        fields = ['file']
+        fields = ['file', 'google_docs_link']
+
         
         
 class ProfilePictureForm(forms.ModelForm):

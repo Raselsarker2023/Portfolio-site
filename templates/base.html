@@ -67,12 +67,10 @@
               </li>
 
               <li class="nav-item mx-3">
-                <a class="nav-link text-white" href="{% url 'add_skill' %}"
-                  >Skills</a>
+                <a class="nav-link text-white" href="{% url 'add_skill' %}">Skills</a> 
               </li>
               <li class="nav-item mx-3">
-                <a class="nav-link text-white" href="{% url 'add_blog' %}"
-                  >Blogs</a>
+                <a class="nav-link text-white" href="{% url 'add_blog' %}">Blogs</a>
               </li>
 
               <li class="nav-item mx-3">
@@ -97,10 +95,30 @@
               </li>
               {% endif %}
             </ul>
+
+            {% if user.is_authenticated %}
+            <ul class="navber-nav ml-auto">
+              <li class"nav-link navbar-brand">
+                <a href="{% url 'picture_upload'  %}"> 
+                  {% if profile_picture.picture.url %}
+                  <img src="{{ profile_picture.picture.url }}" class="rounded-circle" width=50> 
+                  {% endif %}
+                </a>
+              </li>
+            </ul>
+            {% endif %}
+
           </div>
         </div>
       </div>
     </nav>
+
+
+
+
+
+
+
 
     {% block content %} {% endblock %}
 
