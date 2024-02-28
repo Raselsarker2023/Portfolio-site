@@ -8,7 +8,7 @@ from . import models
 from django.views import View
 from .forms import ProjectForm
 from django.http import HttpResponse
-from .models import ProjectModel
+from .models import Comment
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import CreateView,UpdateView,DeleteView,DetailView
 
@@ -59,6 +59,8 @@ class DetailProjectView(DetailView):
             new_comment.post = post
             new_comment.save()
         return self.get(request, *args, **kwargs)
+    
+    
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
