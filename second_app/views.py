@@ -1,16 +1,9 @@
 from django.shortcuts import render, redirect
-from django.shortcuts import render, get_object_or_404
-from django.urls import reverse_lazy, reverse
-from django.utils.decorators import method_decorator
+from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from . import forms
 from . import models
-from django.views import View
-from .forms import ProjectForm
-from django.http import HttpResponse
-from .models import Comment
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import CreateView,UpdateView,DeleteView,DetailView
+from django.views.generic import DetailView
 
 
 # Create your views here.
@@ -30,21 +23,6 @@ def addProject(request):
     return render(request, 'add_projects.html', {'form': form})
 
 
-# @login_required
-# def addProject(request):
-#     if request.method == 'POST':
-#         project_form = forms.ProjectForm(request.POST)
-#         if project_form.is_valid():
-#             project_form.instance.author = request.user
-#             project_form.save()
-#             return redirect('add_project')  
-
-#     else:
-#         project_form = forms.ProjectForm()
-#     return render(request, 'add_projects.html', {'form': project_form})
-
-
-
 
 class DetailProjectView(DetailView):
     model = models.ProjectModel
@@ -60,8 +38,6 @@ class DetailProjectView(DetailView):
             new_comment.save()
         return self.get(request, *args, **kwargs)
     
-    
-    
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         post = self.object 
@@ -70,7 +46,5 @@ class DetailProjectView(DetailView):
         
         context['comments'] = comments
         context['comment_form'] = comment_form
-        context['post'] = post
         return context
     
-

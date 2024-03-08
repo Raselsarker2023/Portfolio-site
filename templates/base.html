@@ -21,8 +21,8 @@
 
   </head>
   <body style="background-color: #e4e4e4">
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #191970; height: 90px">
-      <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #191970; height: 100px">
+      <div class="container-fluid container">
         <div class="d-flex flex-row-reverse gap-2">
           <a class="navbar-brand" href="{% url 'homepage' %}"> Portfolio</a>
           <img
@@ -56,21 +56,21 @@
                 <a class="nav-link text-white" href="{% url 'homepage' %}"><i class="fa-solid fa-house-user mr-2"></i>Home</a>
               </li>
               <li class="nav-item mx-3">
-                <a class="nav-link text-white" href="{% url 'add_project' %}">Add project</a>
+                <a class="nav-link text-white" href="{% url 'add_project' %}"><i class="fa-solid fa-folder-plus"></i>  Add project</a>
               </li>
 
               <li class="nav-item mx-3">
-                <a class="nav-link text-white" href="{% url 'upload_resume' %}">Resume/CV</a>
+                <a class="nav-link text-white" href="{% url 'upload_resume' %}"><i class="fa-solid fa-file"></i> Resume/CV</a>
               </li>
               <li class="nav-item mx-3">
-                <a class="nav-link text-white" href="{% url 'contact_form' %}">Contacts me</a>
+                <a class="nav-link text-white" href="{% url 'contact_form' %}"><i class="fa-solid fa-phone"></i> Contacts us</a>
               </li>
 
               <li class="nav-item mx-3">
-                <a class="nav-link text-white" href="{% url 'add_skill' %}">Skills</a> 
+                <a class="nav-link text-white" href="{% url 'add_skill' %}"><i class="fa-solid fa-medal"></i> Skills</a> 
               </li>
               <li class="nav-item mx-3">
-                <a class="nav-link text-white" href="{% url 'add_blog' %}">Blogs</a>
+                <a class="nav-link text-white" href="{% url 'add_blog' %}"><i class="fa-solid fa-circle-play"></i> Blogs</a>
               </li>
 
               <li class="nav-item mx-3">
@@ -87,7 +87,7 @@
               </li>
               {% else %}
               <li class="nav-item mx-3">
-                <a class=" btn btn-warning text-dark btn-style" href="{% url 'register' %}"
+                <a class=" btn text-white btn-style" href="{% url 'register' %}"
                   ><i class="fa-solid fa-registered mr-2"></i>Register</a>
               </li>
               <li class="nav-item">
