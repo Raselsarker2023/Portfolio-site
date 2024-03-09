@@ -34,7 +34,7 @@ class DetailProjectView(DetailView):
         post = self.get_object()
         if comment_form.is_valid():
             new_comment = comment_form.save(commit=False)
-            new_comment.post = post
+            new_comment.project = post
             new_comment.save()
         return self.get(request, *args, **kwargs)
     
@@ -44,6 +44,9 @@ class DetailProjectView(DetailView):
         comments = post.comments.all()
         comment_form = forms.CommentForm()
         
+        print(comments)
+
+        context['post'] = post 
         context['comments'] = comments
         context['comment_form'] = comment_form
         return context
